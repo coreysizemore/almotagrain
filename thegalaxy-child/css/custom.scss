@@ -1,19 +1,20 @@
-/**************************************************************/
-/******************    Custom Stylesheet    *******************/
-/*******************   by Corey Sizemore   ********************/
-/*******************     version 1.0       ********************/
-/**************************************************************/
+/* color variables */
 
-$green: #00703c;
+$colorone: #00703c;
+$colortwo: #222222;
+$colorthree: #333333;
+
+/* end color variables */
+
 
 header.home_default_image {
-	background: url('../img/home2.jpg') no-repeat;
+	background: url('../img/home4.jpg') no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
 header.page_default_image{
-	background: url('../img/home2.jpg') no-repeat;
+	background: url('../img/page.jpg') no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
 }
@@ -36,65 +37,44 @@ header.slideshow .image_slide.slide_3 {
 	background-attachment: fixed;
 }
 
+/* search * mobile buttons */
+
 a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited {
-	color: $green;
+	color: $colorone;
 }
+
+#search,
+#mobile_nav {
+	background: rgba($colorone,.95);
+}
+
+/* home logo */
 
 #home_logo {
-	#home_page_nav {
-		ul {
-			li:first-child {
-				a:link,
-				a:visited  {
-					.icon {
-						background: $green url('../img/barley_logo.png') no-repeat !important;
-						background-size: 30px 30px !important;
-						background-position: center center !important;
-					}
-				}
-			}
-		}
-	}
-}
-
-#nav_bar {
-	#logo_main {
-		h1 {
-			a:link,
-			a:visited {
-				padding-top: 25px;
-			}
-		}
-	}
-	
-	&.scroll-fix {
-		#logo_main {
-			h1 {
-				a:link,
-				a:visited {
-					padding-top: 10px;
-				}
-			}
-		}
-	}
-}
-
-#home_logo {
-	margin-top: -350px;
-	
-	#logo_home {
-		img {
-			width: 450px;
-		}
-	}
 	
 	#home_page_nav {
 		ul {
 			li {
 				a:link,
 				a:visited {
-					.icon {
-						background: $green;
+					background: $colorone;
+					margin-bottom: 10px;
+				}
+				
+				&:nth-child(2) {
+					a:link,
+					a:visited {
+						padding: 10px 30px;
+						
+						.icon {
+							background: url('../img/barley_logo.png') no-repeat;
+							background-size: 22px 22px;
+							background-position: center center;
+							display: inline-block;
+							height: 28px;
+							vertical-align: middle;
+							width: 28px;
+						}
 					}
 				}
 			}
@@ -102,29 +82,83 @@ a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited
 	}
 }
 
+/* appointment bar */
+
 .appointment {
-	background: $green;
+	background: $colorone;
 }
+
+/* breadcrumbs */
+
+.breadcrumb_wrapper {
+	span.breadcrumbs {
+		a:link, 
+		a:visited {
+			color: $colorone;
+		}
+	}
+}
+
+/* content area */
 
 .content,
 .sidebar {
-	h1,h3,h2.page_heading {
-		color: $green;
+	h1,h3 {
+		color: $colorone;
 	}
 	
 	hr.divider {
-		background: $green;
+		background: $colorone;
 	}
 	
 	a:link,
 	a:visited {
-		color: $green;
-	}
-	
-	h2.date {
-		text-align: center;
+		color: $colorone;
 	}
 }
+
+/* parallax */
+
+.parallax {
+
+	&.parallax_default_image {
+		background: url('../img/home1.jpg') no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	
+	p {
+		margin: 0 auto;
+		margin-bottom: 10px;
+		width: 1200px;
+	}
+	
+	a:link,
+	a:visited {
+		border: .5px solid #ffffff;
+		color: #ffffff;
+		display: inline-block;
+		font-size: 14px;
+		padding: 5px 20px;
+		text-decoration: none;
+		text-transform: uppercase;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-transition: opacity .15s linear;
+		-moz-transition: opacity .15s linear;
+		-ms-transition: opacity .15s linear;
+		transition: opacity .15s linear;
+	}
+	
+	a:hover,
+	a:active {
+		opacity: .5;	
+	}
+}
+
+/* cash bids */
 
 .cash_wrapper {
 	margin-bottom: 50px;
@@ -155,6 +189,8 @@ a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited
 	}
 }
 
+/* facilities page */
+
 .facilities_wrapper {
 	.facilities_row {
 		span {
@@ -182,27 +218,14 @@ a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited
 	}
 }
 
-.breadcrumb_wrapper {
-	span.breadcrumbs {
-		a:link, 
-		a:visited {
-			color: $green;
-		}
-	}
-}
-
-.parallax.parallax_default_image {
-	background: url('../img/home1.jpg') no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-}
+/* blog */
 
 article.blog_preview {
 	span.edit,
 	span.author {
 		a:link, 
 		a:visited {
-			color: $green;
+			color: $colorone;
 		}
 	}
 }
@@ -213,7 +236,7 @@ article.blog_entry {
 		span.author {
 			a:link,
 			a:visited {
-				color: $green;
+				color: $colorone;
 			}
 		}
 	}
@@ -221,8 +244,8 @@ article.blog_entry {
 	.tagcloud {
 		a:link,
 		a:visited {
-			border: .5px solid $green;
-			color: $green;
+			border: .5px solid $colorone;
+			color: $colorone;
 		}
 	}
 }
@@ -234,29 +257,33 @@ article.blog_entry {
 			li {
 				a:link,
 				a:visited {
-					color: $green;
+					color: $colorone;
 				}
 			}
 		}
 	}
 }
 
+/* edit button */
+
 .edit_button {
-	a:link, 
+	a:link,
 	a:visited {
-		background: $green;
+		background: $colorone;
 	}
 }
 
 
+/* responsive media queries */
+
 @media (min-width: 980px) and (max-width: 1220px) {
 	
+	/* home logo */
+	
 	#home_logo {
-		margin-top: -200px;
-		
 		#logo_home {
 			img {
-				width: 300px;
+				width: 350px;
 			}
 		}
 	}
@@ -265,12 +292,12 @@ article.blog_entry {
 	
 @media (min-width: 768px) and (max-width: 979px) {
 	
+	/* home logo */
+	
 	#home_logo {
-		margin-top: 50px;
-		
 		#logo_home {
 			img {
-				width: 300px;
+				width: 250px;
 			}
 		}
 	}
@@ -280,23 +307,23 @@ article.blog_entry {
 @media (min-width: 480px) and (max-width: 767px) {
 	
 	header.home_default_image {
-		background: url('../img/home2_mobile.jpg') no-repeat;
+		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
 		background-attachment: fixed;
 	}
 	
 	header.header_page.page_default_image {
-		background: url('../img/home2_mobile.jpg') no-repeat;
+		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
 		background-attachment: fixed;
 	}
 	
+	/* home logo */
+	
 	#home_logo {
-		margin-top: 100px;
-		
 		#logo_home {
 			img {
-				width: 300px;
+				width: 250px;
 			}
 		}
 	}
@@ -304,28 +331,30 @@ article.blog_entry {
 }
 	
 @media (min-width: 0px) and (max-width: 479px) {
-
+	
 	header.home_default_image {
-		background: url('../img/home2_mobile.jpg') no-repeat;
-		background-size: 100%;
+		background: url('../img/page_mobile.jpg') no-repeat;
+		background-size: cover;
 		background-attachment: fixed;
 	}
 	
 	header.header_page.page_default_image {
-		background: url('../img/home2_mobile.jpg') no-repeat;
+		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
 		background-attachment: fixed;
 	}
 	
+	/* home logo */
+	
 	#home_logo {
-		margin-top: 100px;
-		
 		#logo_home {
 			img {
-				width: 200px;
+				width: 250px;
 			}
 		}
 	}
+	
+	/* cash bids */
 	
 	.cash_wrapper {
 		font-size: 14px;

@@ -2,7 +2,7 @@
 		
 	/*
 		@package WordPress
-		@subpackage endor-child
+		@subpackage thegalaxy-child
 	*/
 	 
 ?>

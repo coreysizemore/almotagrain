@@ -2,14 +2,24 @@
 	
 	/*
 		@package WordPress
-		@subpackage endor
+		@subpackage thegalaxy
 	*/
 	 
 ?>
-
-<div class="main <?php echo basename(get_permalink()); ?> ">
 	
-	<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div class="container"><div class="row gutters"><div class="col_12"><div class="breadcrumb_wrapper"><span class="breadcrumbs">','</span></div></div></div></div>');} ?>
+<?php get_template_part( 'sidebars/sidebar' , 'announcement' ); ?>
+
+<?php 
+	
+	if( get_field('display_call_out_boxes') ):
+
+		get_template_part( 'misc/calloutboxes' );
+		
+	endif;
+		
+?>
+
+<div class="main <?php echo basename(get_permalink()); ?>">
 
 	<?php if( get_field('default_editor')): ?>
 	
@@ -20,72 +30,20 @@
 				<div class="row gutters">
 						
 					<?php if( get_field('sidebar_selection') == 'right' ): ?>
-					
-						<div class="col_2 first">
-							
+						
+						<div class="col_9">
+								
 							<div class="content">
 								
-								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
-		
 								<?php
-						
-									if(get_field('page_sub_heading'))
-									{
-										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
-									}
-												
-								?>
 								
-							</div>
-							
-						</div>
-						
-						<div class="col_7">
-								
-							<div class="content">
-					
-								<?php get_template_part( 'loops/loop', 'page' ); ?>
+									echo '<h2 class="date">';
 									
-							</div>
-								
-						</div>
-							
-						<div class="col_3 last">
-								
-							<?php get_template_part( 'sidebars/sidebar' , 'primary' ); ?>
-								
-						</div>
-					
-					<?php endif; ?>
-					
-					<?php if( get_field('sidebar_selection') == 'none' ): ?>
-					
-						<div class="col_2 first">
-							
-							<div class="content">
-								
-								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
-		
-								<?php
-						
-									if(get_field('page_sub_heading'))
-									{
-										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
-									}
-												
-								?>
-								
-							</div>
-							
-						</div>
-					
-						<div class="col_10 last">
-							
-							<div class="content">
-								
-								<?php
-								
-									echo '<h2 class="date">' . date("l - F d, Y") . '</h2>';
+									date_default_timezone_set('America/Los_Angeles');
+									
+									echo date("l - F d, Y");
+									
+									echo '</h2>';
 									
 									$cashbids = get_field('cash_bid');
 									
@@ -156,8 +114,88 @@
 									endif;
 									
 								?>
-								
+					
 								<?php get_template_part( 'loops/loop', 'page' ); ?>
+								
+								<?php
+	
+									if( get_field('gallery') ):
+								
+										get_template_part( 'misc/gallery' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('accordion') ):
+								
+										get_template_part( 'misc/accordion' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('tabs') ):
+								
+										get_template_part( 'misc/tabs' );
+										
+									endif;
+										
+								?>
+									
+							</div>
+								
+						</div>
+							
+						<div class="col_3">
+								
+							<?php get_template_part( 'sidebars/sidebar' , 'primary' ); ?>
+								
+						</div>
+					
+					<?php endif; ?>
+					
+					<?php if( get_field('sidebar_selection') == 'none' ): ?>
+					
+						<div class="col_12">
+							
+							<div class="content">
+				
+								<?php get_template_part( 'loops/loop', 'page' ); ?>
+								
+								<?php
+	
+									if( get_field('gallery') ):
+								
+										get_template_part( 'misc/gallery' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('accordion') ):
+								
+										get_template_part( 'misc/accordion' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('tabs') ):
+								
+										get_template_part( 'misc/tabs' );
+										
+									endif;
+										
+								?>
 								
 							</div>
 							
@@ -167,35 +205,46 @@
 					
 					<?php if( get_field('sidebar_selection') == 'left' ): ?>
 					
-						<div class="col_3 first">
+						<div class="col_3">
 								
 							<?php get_template_part( 'sidebars/sidebar' , 'primary' ); ?>
 							
 						</div>
 						
-						<div class="col_7">
+						<div class="col_9">
 							
 							<div class="content">
 				
 								<?php get_template_part( 'loops/loop', 'page' ); ?>
 								
-							</div>
-							
-						</div>
-						
-						<div class="col_2 last">
-							
-							<div class="content">
-								
-								<h2 class="page_heading"><?php csdd_the_title(); ?></h2>
-		
 								<?php
-						
-									if(get_field('page_sub_heading'))
-									{
-										echo '<h3 class="page_subheading">' . get_field('page_sub_heading') . '</h3>';
-									}
-												
+	
+									if( get_field('gallery') ):
+								
+										get_template_part( 'misc/gallery' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('accordion') ):
+								
+										get_template_part( 'misc/accordion' );
+										
+									endif;
+										
+								?>
+								
+								<?php 
+									
+									if( get_field('tabs') ):
+								
+										get_template_part( 'misc/tabs' );
+										
+									endif;
+										
 								?>
 								
 							</div>
@@ -211,7 +260,7 @@
 		</div>
 	
 	<?php endif; ?>
-		
+	
 	<?php if(is_user_logged_in()):?>
 	
 		<div class="edit_button">
@@ -224,22 +273,7 @@
 
 </div>
 
-<?php if( get_field('parallax_feature')): ?>
-	
-	<div class="parallax parallax-page parallax_default_image" data-stellar-background-ratio="0.15">
-			
-		<?php
-		
-			if(get_field('parallax_content'))
-			{
-				echo '<div class="filter">' . get_field('parallax_content') . '</div>';
-			}
-											
-		?>
-			
-	</div>
-
-<?php endif; ?>
+<?php get_template_part( 'misc/parallax' ); ?>
 
 <?php
 
@@ -249,3 +283,6 @@
 	}
 						
 ?>
+	
+	
+	
