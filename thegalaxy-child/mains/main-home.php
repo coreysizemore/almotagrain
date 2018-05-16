@@ -39,9 +39,11 @@
 								
 									echo '<h2 class="date">';
 									
-									date_default_timezone_set('America/Los_Angeles');
+									//date_default_timezone_set('America/Los_Angeles');
 									
-									echo date("l - F d, Y");
+									//echo date("l - F d, Y");
+									
+									echo get_field('date');
 									
 									echo '</h2>';
 									
@@ -49,7 +51,7 @@
 									
 									if( $cashbids ):
 									
-										echo '<div class="cash_wrapper"><div class="cash_row first_row"><span></span><span>Soft White Wheat</span><span>White Club Wheat</span><span>Hard Red Winter</span><span>Dark Northern Spring</span><span>Barley</span></div>';
+										echo '<div class="cash_wrapper"><div class="cash_row first_row"><span></span><span>Soft White / Club Wheat</span><span>Hard Red Winter</span><span>Dark Northern Spring</span><span>Barley</span></div>';
 									
 										foreach( $cashbids as $bid ):
 										
@@ -72,15 +74,7 @@
 											endif;
 											
 											echo '</span><span>';
-											
-											if ($bid['white_club_wheat']):
-											
-												echo $bid['white_club_wheat'];
-											
-											endif;
-											
-											echo '</span><span>';
-											
+																						
 											if ($bid['hard_red_winter']):
 											
 												echo $bid['hard_red_winter'];
