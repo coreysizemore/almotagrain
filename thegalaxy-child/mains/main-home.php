@@ -19,7 +19,7 @@
 		
 ?>
 
-<div class="main <?php echo basename(get_permalink()); ?>">
+<div id="main" class="<?php echo basename(get_permalink()); ?>">
 
 	<?php if( get_field('default_editor')): ?>
 	
@@ -31,7 +31,7 @@
 						
 					<?php if( get_field('sidebar_selection') == 'right' ): ?>
 						
-						<div class="col_9">
+						<div class="col_8">
 								
 							<div class="content">
 								
@@ -145,7 +145,7 @@
 								
 						</div>
 							
-						<div class="col_3">
+						<div class="col_4">
 								
 							<?php get_template_part( 'sidebars/sidebar' , 'primary' ); ?>
 								

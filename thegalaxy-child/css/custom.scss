@@ -7,13 +7,13 @@ $colorthree: #333333;
 /* end color variables */
 
 
-header.home_default_image {
+header {
 	background: url('../img/home4.jpg') no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-header.page_default_image{
+header#header_page {
 	background: url('../img/page.jpg') no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
@@ -50,31 +50,33 @@ a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited
 
 /* home logo */
 
-#home_logo {
-	
-	#home_page_nav {
-		ul {
-			li {
+header {
+	#nav_bar {
+		#logo_main {
+			h1 {
 				a:link,
 				a:visited {
-					background: $colorone;
-					margin-bottom: 10px;
+					font-size: 19px;
 				}
-				
-				&:nth-child(2) {
+			}
+		}
+	}
+	
+	#home_logo {
+		margin-top: -200px;
+		
+		img {
+			height: 250px;
+			margin-bottom: 30px;
+		}
+		
+		#home_page_nav {
+			ul {
+				li {
 					a:link,
 					a:visited {
-						padding: 10px 30px;
-						
-						.icon {
-							background: url('../img/barley_logo.png') no-repeat;
-							background-size: 22px 22px;
-							background-position: center center;
-							display: inline-block;
-							height: 28px;
-							vertical-align: middle;
-							width: 28px;
-						}
+						background: $colorone;
+						margin-bottom: 10px;
 					}
 				}
 			}
@@ -84,7 +86,7 @@ a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited
 
 /* appointment bar */
 
-.appointment {
+#attention_bar {
 	background: $colorone;
 }
 
@@ -101,8 +103,8 @@ a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited
 
 /* content area */
 
-.content,
-.sidebar {
+.content {
+	
 	h1,h3 {
 		color: $colorone;
 	}
@@ -117,15 +119,19 @@ a#searchopen:link, a#searchopen:visited, a#mobileopen:link, a#mobileopen:visited
 	}
 }
 
+.sidebar {
+	.business_information_wrapper {
+		background: $colorone;
+	}
+}
+
 /* parallax */
 
-.parallax {
+#parallax {
+	background: url('../img/home1.jpg') no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 
-	&.parallax_default_image {
-		background: url('../img/home1.jpg') no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-	}
 	
 	p {
 		margin: 0 auto;
@@ -355,41 +361,23 @@ article.blog_entry {
 
 @media (min-width: 980px) and (max-width: 1220px) {
 	
-	/* home logo */
-	
-	#home_logo {
-		#logo_home {
-			img {
-				width: 350px;
-			}
-		}
-	}
 	
 }
 	
 @media (min-width: 768px) and (max-width: 979px) {
 	
-	/* home logo */
-	
-	#home_logo {
-		#logo_home {
-			img {
-				width: 250px;
-			}
-		}
-	}
 	
 }
 	
 @media (min-width: 480px) and (max-width: 767px) {
 	
-	header.home_default_image {
+	header {
 		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
 		background-attachment: fixed;
 	}
 	
-	header.header_page.page_default_image {
+	header#header_page {
 		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
 		background-attachment: fixed;
@@ -397,10 +385,10 @@ article.blog_entry {
 	
 	/* home logo */
 	
-	#home_logo {
-		#logo_home {
+	header#header_home_mobile {
+		#home_logo {
 			img {
-				width: 250px;
+				height: 200px;
 			}
 		}
 	}
@@ -409,13 +397,13 @@ article.blog_entry {
 	
 @media (min-width: 0px) and (max-width: 479px) {
 	
-	header.home_default_image {
+	header {
 		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
 	}
 	
-	header.header_page.page_default_image {
+	header#header_page {
 		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
 		background-attachment: fixed;
@@ -423,10 +411,10 @@ article.blog_entry {
 	
 	/* home logo */
 	
-	#home_logo {
-		#logo_home {
+	header#header_home_mobile {
+		#home_logo {
 			img {
-				width: 250px;
+				height: 150px;
 			}
 		}
 	}
