@@ -14,7 +14,7 @@
 	
 	if( $cashbids ):
 	
-		echo '<div class="cash_wrapper"><div class="cash_row first_row"><span></span><span>Soft White / Club Wheat</span><span>Hard Red Winter</span><span>Dark Northern Spring</span><span>Barley</span></div>';
+		echo '<div class="cash_wrapper"><div class="cash_row first_row"><span></span><span>Soft White Wheat</span><span>Hard Red Winter</span><span>Dark Northern Spring</span><span>Barley</span></div>';
 	
 		foreach( $cashbids as $bid ):
 		
