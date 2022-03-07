@@ -19,19 +19,19 @@ header#header_page {
 	background-attachment: fixed;
 }
 
-header.slideshow .image_slide.slide_1 {
+header#header_home.slideshow_tall .image_slide.slide_1 {
 	background: url('../img/home4.jpg') no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-header.slideshow .image_slide.slide_2 {
+header#header_home.slideshow_tall .image_slide.slide_2 {
 	background: url('../img/home3.jpg') no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-header.slideshow .image_slide.slide_3 {
+header#header_home.slideshow_tall .image_slide.slide_3 {
 	background: url('../img/home2.jpg') no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -362,11 +362,41 @@ article.blog_entry {
 
 @media (min-width: 980px) and (max-width: 1220px) {
 	
+	#parallax {
+		background-size: 100%;
+		background-attachment: scroll;
+		display: block;
+		
+		p {
+			width: 100%;
+		}
+	}
 	
 }
 	
 @media (min-width: 768px) and (max-width: 979px) {
 	
+	header {
+		background: url('../img/page_mobile.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: scroll;
+	}
+	
+	header#header_page {
+		background: url('../img/page_mobile.jpg') no-repeat;
+		background-size: 100%;
+		background-attachment: scroll;
+	}
+	
+	#parallax {
+		background-size: 100%;
+		background-attachment: scroll;
+		display: block;
+		
+		p {
+			width: 100%;
+		}
+	}
 	
 }
 	
@@ -375,13 +405,13 @@ article.blog_entry {
 	header {
 		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
-		background-attachment: fixed;
+		background-attachment: scroll;
 	}
 	
 	header#header_page {
 		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
-		background-attachment: fixed;
+		background-attachment: scroll;
 	}
 	
 	/* home logo */
@@ -394,20 +424,31 @@ article.blog_entry {
 		}
 	}
 	
+	#parallax {
+		background-size: 150%;
+		background-attachment: scroll;
+		display: block;
+		height: 450px;
+		
+		p {
+			width: 100%;
+		}
+	}
+	
 }
 	
 @media (min-width: 0px) and (max-width: 479px) {
 	
 	header {
 		background: url('../img/page_mobile.jpg') no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
+		background-size: 100%;
+		background-attachment: scroll;
 	}
 	
 	header#header_page {
 		background: url('../img/page_mobile.jpg') no-repeat;
 		background-size: 100%;
-		background-attachment: fixed;
+		background-attachment: scroll;
 	}
 	
 	/* home logo */
@@ -415,7 +456,7 @@ article.blog_entry {
 	header#header_home_mobile {
 		#home_logo {
 			img {
-				height: 150px;
+				height: 200px;
 			}
 		}
 	}
@@ -441,6 +482,17 @@ article.blog_entry {
 					display: none;
 				}
 			}
+		}
+	}
+	
+	#parallax {
+		background-size: 200%;
+		background-attachment: scroll;
+		display: block;
+		height: 550px;
+		
+		p {
+			width: 100%;
 		}
 	}
 	
